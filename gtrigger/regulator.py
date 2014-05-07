@@ -15,7 +15,7 @@ class Regulator(object):
         self.calibration = 0.0
 
     def sample(self, value):
-
+        """Return the next output from the regulator."""
         error = value - self.setpoint
         self.calibration -= error * self.converge_factor
         return self.setpoint + self.calibration
